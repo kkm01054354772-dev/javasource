@@ -12,6 +12,10 @@ public class SwitchEx1 {
         int month = Integer.parseInt(sc.nextLine());
         String season = " ";
 
+        // 조건식을 계산 => 조건식과 일치하는 case 문으로 이동 => 문장 수행 => break 또는 switch 구문의 끝에서 빠져나감
+        // 조건식의 결과는 정수, 문자열만 가능
+        // 범위 지정이 안되고 일치하는 값만 확인하므로 if구문을 사용하는 게 유리한 경우가 많음
+
         switch (month) {
             case 3:
             case 4:

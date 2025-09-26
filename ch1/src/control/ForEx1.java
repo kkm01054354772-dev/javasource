@@ -27,6 +27,7 @@ public class ForEx1 {
             sum += i;
         }
         System.out.println("1부터 10까지의 합 = " + sum);
+
     }
 
 }

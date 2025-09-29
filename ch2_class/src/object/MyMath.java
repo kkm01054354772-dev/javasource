@@ -1,0 +1,20 @@
+package object;
+
+public class MyMath {
+    long sum(long a, long b) {
+        return a + b;
+    }
+
+    long subtract(long a, long b) {
+        return a - b;
+    }
+
+    long multiply(long a, long b) {
+        return a * b;
+    }
+
+    double divide(double a, double b) {
+        return a / b;
+    }
+
+}

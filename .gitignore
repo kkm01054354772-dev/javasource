@@ -26,5 +26,5 @@ replay_pid*
 # vscode 환경설정 파일 제거
 .vscode/*
 .history/
-ch1/.vscode/settings.json
-ch1/README.md
+**/.vscode/settings.json
+**/README.md

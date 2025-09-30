@@ -27,6 +27,28 @@ public class CarEx {
         // 3. setter 메소드 : 초기화 + 변경
         car3.setColor("Green");
         System.out.println("색상 지정 후 " + car3);
+
+        // println(car);
+        println(car2);
+        // println(car3);
+        // println(car4);
+        // println(car5);
+        System.out.println(car2);
     }
 
+    public static void println(Car car) {
+        // 값 변경
+        car.setColor("Red");
+
+        System.out.println("=====================");
+        System.out.println("제조회사 : " + car.getCompanyName());
+        System.out.println("모델명 : " + car.getModel());
+        System.out.println("색상 : " + car.getColor());
+        System.out.println("최고속도 : " + car.getMaxSpeed());
+
+    }
+
+    public static void test(String str) {
+
+    }
 }

@@ -7,7 +7,7 @@ public class MyMathEx {
 
         // 메소드 호출
         // (1) 변수에 받기
-        // (2) 출력문으로 바로
+        // (2) 출력문
         long result = myMath.sum(12, 63);
         System.out.println(result);
 

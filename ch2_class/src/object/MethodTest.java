@@ -1,6 +1,14 @@
 package object;
 
 public class MethodTest {
+    // 메소드
+    // 재사용성 높다
+    // 중복된 코드 제거
+    // 프로그램 구조화
+
+    // 1. 인스턴스 메소드 : 클래스 영역 => 인스턴스 생성 후
+    // 2. 클래스 메소드 : 클래스 영역 (static) => 클래스가 메모리에 올라갈 때 (공유)
+
     // 두 개의 인자를 받아서 덧셈 후 결과를 리턴
     int sum(int a, int b) {
         // int result = a + b;

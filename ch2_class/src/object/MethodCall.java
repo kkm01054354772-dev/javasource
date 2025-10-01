@@ -9,7 +9,7 @@ public class MethodCall {
         MethodCall obj = new MethodCall();
         // 클래스 변수 호출
         System.out.println(cv);
-        // 인스턴스 변수 호출 <<
+        // 인스턴스 변수 호출 << 호출 시점이 다름
         System.out.println(obj.iv);
     }
 
@@ -24,7 +24,7 @@ public class MethodCall {
         MethodCall obj = new MethodCall();
         // 클래스 메소드 호출
         staticMethod1();
-        // 인스턴스 메소드 호출 <<
+        // 인스턴스 메소드 호출 << 호출 시점이 다름
         obj.instanceMethod1();
     }
 

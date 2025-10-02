@@ -8,9 +8,22 @@ public class Account {
     private long balance;
 
     // 생성자
-    public Account(String accountNo, String owner, long balance) {
+
+    public Account(String accountNo) {
         this.accountNo = accountNo;
+
+    }
+
+    public Account(String accountNo, String owner) {
+        // this.accountNo = accountNo;
+        this(accountNo);
         this.owner = owner;
+    }
+
+    public Account(String accountNo, String owner, long balance) {
+        // this.accountNo = accountNo;
+        // this.owner = owner;
+        this(accountNo, owner);
         this.balance = balance;
     }
 

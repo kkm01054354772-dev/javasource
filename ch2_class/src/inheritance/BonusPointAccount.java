@@ -2,7 +2,6 @@ package inheritance;
 
 public class BonusPointAccount extends Account {
     private int bonusPoint;
-    private long creditLine;
 
     public BonusPointAccount(String accountNo, String owner, long balance, int bonusPoint) {
 
@@ -17,23 +16,12 @@ public class BonusPointAccount extends Account {
         // 예금
         super.deposit(money);
         // 보너스 포인트 적립
-        bonusPoint = (int) (money * 0.01);
+        bonusPoint += (int) (money * 0.01);
 
     }
 
-    // @Override
-    // long withdraw(long money, long balance, long creditLine) throws Exception {
-    // if (balance + creditLine < money) {
-    // throw new Exception("잔액부족");
-    // } else if(balance > money) {
-    // balance = balance - money;
-
-    // } else if (balance < money) {
-    // balance = balance + creditLine - money;
-
-    // }
-    // return balance;
-
-    // }
+    public int getBonusPoint() {
+        return bonusPoint;
+    }
 
 }

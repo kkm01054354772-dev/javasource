@@ -12,6 +12,7 @@ public class ListEx2 {
 
         // UnsupportedOperationException 변경 불가능
         List<String> list3 = List.of("사과", "포도", "딸기", "수박");
+        // 변경 가능하게
         List<String> list6 = new ArrayList<>(List.of("사과", "포도", "딸기", "수박"));
         list6.add("바나나");
 
@@ -27,6 +28,7 @@ public class ListEx2 {
         // list4.add("바나나");
         // list4.remove(0);
 
+        // 변경 가능하게
         String[] fruits2 = { "사과", "포도", "딸기", "수박" };
         List<String> list5 = new ArrayList<>(Arrays.asList(fruits2));
         list5.add("바나나");

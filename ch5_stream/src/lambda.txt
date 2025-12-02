@@ -1,0 +1,103 @@
+람다식
+ : 함수형 언어의 장점을 이용
+
+자바스크립트
+const func = () => {}
+
+자바스크립트
+class A{
+    void func(){}
+}
+A obj = new A();
+obj.func();
+
+반환타입 메소드명(매개변수) {}
+
+int max(int a, int b){return a > b ? a : b ;}
+
+=> 람다식으로 변경
+(int a, int b) -> {return a > b ? a : b;}
+(int a, int b) ->  a > b ? a : b;
+( a , b ) ->  a > b ? a : b;
+
+==> 함수형 인터페이스
+
+==========================
+기본 개념
+
+1. 인터페이스 작성 => 구현 클래스 작성 => 구현 클래스의 객체 생성 후 사용 (여러 번 호출)
+
+public interface A{
+    void method();
+}
+
+public class B implements A{
+    void method(){
+        ...;
+    }
+}
+A b = new B();
+B b = new B();
+b.method();
+
+2. 익명 클래스 (임시 사용) 이용
+
+Lambda lambda = new Lambda() {
+    @Override
+    public void method(){
+
+    }
+};
+
+lambda.method();
+
+
+--------------------------------------
+
+java.util.function 패키지
+
+함수형 인터페이스를 작성해야 하는 번거로움을 제거
+- java.lang.Runnable  void run() : 매개변수 없고, 리턴타입 없음
+- Supplier<T> T get() : 매개변수 없고, 리턴타입 있음
+- Consumer<T> void accept(T t) : 매개변수 있고, 리턴타입 없음
+- Function<T,R> R apply(T t) : 매개변수 있고, 리턴타입 있음
+- Predicate<T> boolean test(T t) : 매개변수 있고, 리턴타입 있음
+
+매개변수가 2개인 함수형 인터페이스
+- BiConsumer<T, U> void accept(T t, U u) : 매개변수 있고, 리턴타입 없음
+- BiFunction<T, U, R> R apply(T t, U u) : 매개변수 있고, 리턴타입 있음
+- BiPredicate<T, U> boolean test(T t, U u) : 매개변수 있고, 리턴타입 있음
+
+
+--------------------------------------
+
+
+- 컬렉션이나 배열에 데이터를 담고 원하는 결과를 얻기 위해 for, Iterator를 이용함
+- 단점 : 재사용성 떨어짐, 데이터 소스마다 다른 방식으로 다뤄야 함
+
+=> 이를 해결하고자 스트림을 사용
+
+스트림
+ - 원본 데이터 소스로부터 데이터를 읽어올 뿐 변경하지는 않음
+ - 일회용
+ - 작업을 내부 반복응로 처리
+
+
+스트림 연산
+1. 중간연산
+    연산 결과가 스트림인 연산 / 스트림에 연속해서 중간 연산할 수 있음
+    distinct()
+    filter()
+    limit(long maxSize)
+    skip(long n)
+    peek(Consumer<T> action)
+    sorted()
+    map(Function<T,R> function)
+
+2. 최종연산
+    연산 결과가 스트림이 아닌 연산 / 스트림 요소를 소모하므로 단 한번만 가능
+    forEach(Consumer<? super T> action)
+    count()
+    max(Comparator<? super T> comparator)
+    min(Comparator<? super T> comparator)
+    collect(Collector<T,A,R> collector)

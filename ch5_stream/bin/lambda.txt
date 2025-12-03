@@ -20,7 +20,7 @@ int max(int a, int b){return a > b ? a : b ;}
 (int a, int b) ->  a > b ? a : b;
 ( a , b ) ->  a > b ? a : b;
 
-==> 함수형 인터페이스
+==> 함수형 인터페이스 (단일 메소드)
 
 ==========================
 기본 개념
@@ -54,7 +54,7 @@ lambda.method();
 
 --------------------------------------
 
-java.util.function 패키지
+java.util.function 패키지 
 
 함수형 인터페이스를 작성해야 하는 번거로움을 제거
 - java.lang.Runnable  void run() : 매개변수 없고, 리턴타입 없음
@@ -80,19 +80,19 @@ java.util.function 패키지
 스트림
  - 원본 데이터 소스로부터 데이터를 읽어올 뿐 변경하지는 않음
  - 일회용
- - 작업을 내부 반복응로 처리
+ - 작업을 내부 반복으로 처리
 
 
 스트림 연산
 1. 중간연산
     연산 결과가 스트림인 연산 / 스트림에 연속해서 중간 연산할 수 있음
-    distinct()
-    filter()
-    limit(long maxSize)
-    skip(long n)
-    peek(Consumer<T> action)
+    distinct() : 중복 제거
+    filter() : 조건에 안 맞는 요소 제외
+    limit(long maxSize) : 개수 제한
+    skip(long n) : 건너뛰기
+    peek(Consumer<T> action) : 중간연산확인
     sorted()
-    map(Function<T,R> function)
+    map(Function<T,R> function) : 스트림 요소에 저장된 값 중에서 원하는 필드만 추출하거나 특정 형태로 변환할 때 사용
 
 2. 최종연산
     연산 결과가 스트림이 아닌 연산 / 스트림 요소를 소모하므로 단 한번만 가능
@@ -101,3 +101,16 @@ java.util.function 패키지
     max(Comparator<? super T> comparator)
     min(Comparator<? super T> comparator)
     collect(Collector<T,A,R> collector)
+
+
+-----------------------------------------
+
+Optional<T>
+OptionalInt
+OptionalDouble
+
+Student stu = obj.method();
+//System.out.print(stu.getScore()); // => NullPointerException 발생 가능성
+if(stu != null) System.out.print(stu.getScore());
+
+Null 체크를 위한 if 문 없이 코드 작성 => Optional

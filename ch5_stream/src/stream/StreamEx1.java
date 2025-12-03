@@ -20,7 +20,7 @@ public class StreamEx1 {
         List<String> list2 =Arrays.asList(strArr);
        
 
-        // 정렬 후  출력 ( Array , List 모두 원본이 변화함)
+        // 정렬 후  출력 (Array , List 모두 원본이 변화함)
         // list.sort(Comparator.naturalOrder());
         // System.out.println(list);
         // System.out.println();
